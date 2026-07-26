@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   # Install firefox.
   programs.firefox.enable = true;
@@ -11,6 +11,21 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
+
+  # Flatpak support
+  services.flatpak.enable = true;
+  services.flatpak.remotes = [
+    { name = "flathub"; location = "https://dl.flathub.org/repo/flathub.flatpakrepo"; }
+  ];
+  services.flatpak.packages = [
+    { appId = "com.discordapp.Discord"; origin = "flathub"; }  # replace with your apps
+    { appId = "org.vinegarhq.Sober"; origin = "flathub"; }  # replace with your apps
+  ];
+
+  # Needed for Flatpak app integration (file pickers, theming, etc.)
+  xdg.portal.enable = true;
+  # xdg-desktop-portal-kde is the right portal for Plasma
+  xdg.portal.extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -39,9 +54,10 @@
     #  sddm-astronaut 
 
 
-    vesktop
+    # vesktop
+    # discord
     librewolf
-    ytmdesktop
+    # ytmdesktop
     vscode
     proton-authenticator
     neovim
