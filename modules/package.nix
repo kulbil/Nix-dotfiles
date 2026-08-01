@@ -64,5 +64,11 @@
     obsidian
     libreoffice
     git
+    qbittorrent
+    vlc
+    jellyflix
+    fastfetch
+    osu-lazer
+    prismlauncher
   ];
 }

@@ -1,4 +1,6 @@
 { pkgs, ... }:
+
+/*
 let
   andromedaLauncher = pkgs.stdenvNoCC.mkDerivation {
     pname = "andromeda-launcher";
@@ -7,7 +9,7 @@ let
       owner = "EliverLara";
       repo = "AndromedaLauncher";
       rev = "59aac937ab4b150b93977e187356e97ef952654d"; # pin a real commit
-      hash = pkgs.lib.fakeHash; # switch will error with the real hash the first time
+      hash = "sha256-ID0C2MHxJNsN9eKvsKPzpRdAmCEoHRIGJX0ufUjYnWo="; # switch will error with the real hash the first time
     };
     installPhase = ''
       mkdir -p $out/share/plasma/plasmoids/AndromedaLauncher
@@ -15,14 +17,43 @@ let
     '';
   };
 in
+*/
 {
   home.username = "martin";
   home.stateVersion = "26.05";
 
-  home.packages = [ andromedaLauncher ];
+  #home.packages = [ andromedaLauncher ];
 
   programs.plasma = {
     enable = true;
+
+    overrideConfig = true;
+
+
+    #Config file changes found using rc2nix
+    #Command ran: nix run github:nix-community/plasma-manager > plasma-config.nix
+
+    configFile = {
+
+      kwinrc.EdgeBarrier.EdgeBarrier = 0; #Disables edges between monitors
+      kwinrc.Effect-overview.BorderActivate = 9; #Not quite sure but something to do with displays
+      kwinrc.Plugins.shakecursorEnabled = false; #Disables cursor shaking
+      kded5rc.Module-browserintegrationreminder.autoload = false; #Disables the system tray notif for the firefox extention
+
+      #Change this if mouse id has changed
+      #kcminputrc."Libinput/4012/6878/keyd virtual pointer".PointerAcceleration = 0.000;
+      #kcminputrc."Libinput/4012/6878/keyd virtual pointer".PointerAccelerationProfile = 1;
+
+      kcminputrc."Libinput/1133/16531/Logitech PRO X".PointerAcceleration = 0.000;
+      kcminputrc."Libinput/1133/16531/Logitech PRO X".PointerAccelerationProfile = 1;
+
+      kdeglobals.Favorites.FavoriteApps = "org.kde.dolphin.desktop,librewolf.desktop,com.discordapp.Discord.desktop,org.kde.konsole.desktop";
+
+    };
+
+    shortcuts = {
+      kmix.mic_mute = [ ];
+    };
 
     workspace = {
       colorScheme = "BreezeDark";
@@ -31,12 +62,22 @@ in
     };
 
     panels = [
+
       {
         location = "bottom";
         screen = 0;
         widgets = [
           "org.kde.plasma.panelspacer"
+          {
+            name = "org.kde.plasma.kickerdash";
+            config = {
+              General = {
+                icon = "nix-snowflake";
+              };
+            };
+          }
 
+          /*
           {
             name = "AndromedaLauncher";
             config = {
@@ -51,17 +92,41 @@ in
               };
             };
           }
+          */
 
           {
             iconTasks.launchers = [
               "preferred://filemanager"
+              "applications:librewolf.desktop"
               "applications:com.discordapp.Discord.desktop"
-              "preferred://browser"
             ];
           }
 
           "org.kde.plasma.panelspacer"
-          "org.kde.plasma.systemtray"
+          {
+            systemTray.items = {
+              shown = [
+                "org.kde.plasma.volume"
+              ];
+
+              hidden = [
+                "org.kde.plasma.clipboard"
+                "org.kde.plasma.brightness"
+                "org.kde.plasma.networkmanagement"
+                "org.kde.plasma.devicenotifier"
+                "org.kde.plasma.mediacontroller"
+                "org.kde.plasma.notifications"
+                "org.kde.plasma.manage-inputmethod"
+                "org.kde.plasma.cameraindicator"
+                "org.kde.plasma.keyboardindicator"
+                "org.kde.plasma.weather"
+                "org.kde.plasma.battery"
+                "org.kde.plasma.keyboardlayout"
+                "org.kde.plasma.printmanager"
+                "org.kde.kscreen"
+              ];
+            };
+          }
 
           {
             name = "org.kde.plasma.digitalclock";
@@ -73,6 +138,43 @@ in
           }
         ];
       }
+
+      {
+        location = "bottom";
+        screen = 1;
+        hiding = "autohide";
+        floating = true;
+        lengthMode = "fit";
+        widgets = [
+
+          {
+            iconTasks.launchers = [
+              "preferred://filemanager"
+              "applications:librewolf.desktop"
+              "applications:com.discordapp.Discord.desktop"
+            ];
+          }
+        ];
+      }
+
+      {
+        location = "bottom";
+        screen = 2;
+        hiding = "autohide";
+        floating = true;
+        lengthMode = "fit";
+        widgets = [
+
+          {
+            iconTasks.launchers = [
+              "preferred://filemanager"
+              "applications:librewolf.desktop"
+              "applications:com.discordapp.Discord.desktop"
+            ];
+          }
+        ];
+      }
+
     ];
   };
 }
