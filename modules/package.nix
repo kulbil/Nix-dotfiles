@@ -1,8 +1,5 @@
 { pkgs, ... }:
 {
-  # Install firefox.
-  programs.firefox.enable = true;
-
   # Install steam
   programs.steam = {
     enable = true;
@@ -10,6 +7,42 @@
     # Optional but recommended
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
+  };
+
+  programs.firefox = {
+    enable = true;
+    package = pkgs.librewolf;
+    policies = {
+      DisableTelemetry = true;
+      DisableFirefoxStudies = true;
+      Preferences = {
+        "privacy.resistFingerprinting" = false;
+        "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
+        "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";kon
+      };
+      ExtensionSettings = {
+        "uBlock0@raymondhill.net" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+          installation_mode = "force_installed"; # UBlock Origins
+        };
+        "446900e4-71c2-419f-a6a7-df9c091e268b" = { # Bitwarden
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
+          installation_mode = "force_installed";
+        };
+        "jid0-adyhmvsP91nUO8pRv0Mn2VKeB84@jetpack" = { # Raindrop.io
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/raindropio/latest.xpi";
+          installation_mode = "normal_installed";
+        };
+        "{cb31ec5d-c49a-4e5a-b240-16c767444f62}" = { # Indie Wiki Buddy
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/indie-wiki-buddy/latest.xpi";
+          installation_mode = "normal_installed";
+        };
+        "{47bf427e-c83d-457d-9b3d-3db4118574bd}" = { # NightTab
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/nighttab/latest.xpi";
+          installation_mode = "normal_installed";
+        };
+      };
+    };
   };
 
   # Flatpak support
@@ -43,20 +76,18 @@
     #  networkmanagerapplet  # wifi tray icon
     #  brightnessctl  # brightness keys
     #  playerctl      # media keys
-    
+
     #  kdePackages.dolphin   # file manager
     #  kdePackages.solid     # device/hardware integration for dolphin
     #  udiskie               # auto-mounts removable media in the system tray
-    
-    #  gedit                 # text editor    
 
-    #  pkgs.bibata-cursors # cursor package   
-    #  sddm-astronaut 
+    #  gedit                 # text editor
+
+    #  pkgs.bibata-cursors # cursor package
+    #  sddm-astronaut
 
 
-    # vesktop
-    # discord
-    librewolf
+    # librewolf
     # ytmdesktop
     vscode
     proton-authenticator

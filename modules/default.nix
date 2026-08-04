@@ -3,6 +3,7 @@
   imports = [
     ./aliases.nix
     ./audio.nix
+    ./bluetooth.nix
     ./bootloader.nix
     ./keyboard.nix
     ./locales.nix
