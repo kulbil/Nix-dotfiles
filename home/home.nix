@@ -19,8 +19,14 @@ let
 in
 */
 {
+
   home.username = "martin";
   home.stateVersion = "26.05";
+
+  imports =
+    [
+      ../modules/homeModules/git
+    ];
 
   #home.packages = [ andromedaLauncher ];
 
@@ -99,6 +105,7 @@ in
               "preferred://filemanager"
               "applications:librewolf.desktop"
               "applications:com.discordapp.Discord.desktop"
+              "applications:com.github.th_ch.youtube_music.desktop"
             ];
           }
 
@@ -152,6 +159,7 @@ in
               "preferred://filemanager"
               "applications:librewolf.desktop"
               "applications:com.discordapp.Discord.desktop"
+              "applications:com.github.th_ch.youtube_music.desktop"
             ];
           }
         ];
@@ -170,6 +178,7 @@ in
               "preferred://filemanager"
               "applications:librewolf.desktop"
               "applications:com.discordapp.Discord.desktop"
+              "applications:com.github.th_ch.youtube_music.desktop"
             ];
           }
         ];
