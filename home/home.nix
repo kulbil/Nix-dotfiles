@@ -55,6 +55,7 @@ in
 
       kdeglobals.Favorites.FavoriteApps = "org.kde.dolphin.desktop,librewolf.desktop,com.discordapp.Discord.desktop,org.kde.konsole.desktop";
 
+      kdeglobals.PreviewSettings.MaximumRemoteSize = 10737418240; #Remote file preview size 10GiB
     };
 
     shortcuts = {
@@ -74,14 +75,17 @@ in
         screen = 0;
         widgets = [
           "org.kde.plasma.panelspacer"
+
+
           {
-            name = "org.kde.plasma.kickerdash";
+            name = "org.kde.plasma.kickoff";
             config = {
               General = {
                 icon = "nix-snowflake";
               };
             };
           }
+
 
           /*
           {
@@ -131,6 +135,7 @@ in
                 "org.kde.plasma.keyboardlayout"
                 "org.kde.plasma.printmanager"
                 "org.kde.kscreen"
+                "xdg-desktop-portal-kde" #To hide the red dot for recording stuff
               ];
             };
           }
@@ -166,6 +171,27 @@ in
       }
 
       {
+        location = "top";
+        screen = 1;
+        hiding = "autohide";
+        floating = true;
+        lengthMode = "fit";
+        widgets = [
+          {
+            name = "org.kde.plasma.panelspacer";
+            config = { General = { expanding = false; length = 100; }; };
+          }
+
+          { name = "org.kde.plasma.digitalclock"; config = { Appearance = { fontWeight = 400; }; }; }
+
+          {
+            name = "org.kde.plasma.panelspacer";
+            config = { General = { expanding = false; length = 100; }; };
+          }
+        ];
+      }
+
+      {
         location = "bottom";
         screen = 2;
         hiding = "autohide";
@@ -184,6 +210,26 @@ in
         ];
       }
 
+      {
+        location = "top";
+        screen = 2;
+        hiding = "autohide";
+        floating = true;
+        lengthMode = "fit";
+        widgets = [
+          {
+            name = "org.kde.plasma.panelspacer";
+            config = { General = { expanding = false; length = 100; }; };
+          }
+
+          { name = "org.kde.plasma.digitalclock"; config = { Appearance = { fontWeight = 400; }; }; }
+
+          {
+            name = "org.kde.plasma.panelspacer";
+            config = { General = { expanding = false; length = 100; }; };
+          }
+        ];
+      }
     ];
   };
 }

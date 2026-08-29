@@ -1,9 +1,12 @@
 { ... }:
-
 {
     programs.git = {
         enable = true;
-        userName = "kulbil";
-        userEmail = "martin.danielsen@astralsaga.com";
+        settings = {
+            user = {
+                name = "kulbil";
+                email = "martin.danielsen@astralsaga.com";
+            };
+        };
     };
 }

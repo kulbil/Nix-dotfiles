@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, nixpkgs-unstable, ... }:
 {
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -8,6 +8,13 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
+  };
+
+  services.ollama = {
+    enable = true;
+    package = (import nixpkgs-unstable {
+      system = pkgs.system;
+    }).ollama-rocm;
   };
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;

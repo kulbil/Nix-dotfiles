@@ -13,8 +13,9 @@
     { name = "flathub"; location = "https://dl.flathub.org/repo/flathub.flatpakrepo"; }
   ];
   services.flatpak.packages = [
-    { appId = "com.discordapp.Discord"; origin = "flathub"; }  # replace with your apps
-    { appId = "org.vinegarhq.Sober"; origin = "flathub"; }  # replace with your apps
+    { appId = "com.discordapp.Discord"; origin = "flathub"; }  # Discord
+    { appId = "org.vinegarhq.Sober"; origin = "flathub"; }  # Sober
+    { appId = "com.dec05eba.gpu_screen_recorder"; origin = "flathub"; }  # GPU recorder
   ];
 
 
@@ -26,6 +27,7 @@
 
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
+    anki
     librewolf
     pear-desktop
     vscode
@@ -42,6 +44,14 @@
     prismlauncher
     dolphin-emu
     cemu
+    eden
+    kdePackages.kdenlive
+    r2modman
+    aerc
+
+    (python3.withPackages (python-pkgs: with python-pkgs; [
+      ollama
+    ]))
 
     kdePackages.kmail
     kdePackages.kmail-account-wizard
