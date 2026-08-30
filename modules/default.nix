@@ -12,6 +12,8 @@
     ./package.nix
     ./service.nix
     ./setting.nix
+    ./steam.nix
+    ./flatpak.nix
     ./user.nix
   ];
 }

@@ -6,6 +6,7 @@
     ./disks.nix
 
     ../../modules
+    ../../modules/package-desktop.nix
     ../../modules/kde.nix
     ../../modules/ollama.nix
   ];

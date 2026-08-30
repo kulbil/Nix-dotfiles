@@ -4,9 +4,10 @@
   imports = [
     ./hardware-configuration.nix
 
+    ../../modules
+    ../../modules/package-laptop.nix
     ../../modules/wireguard.nix
     ../../modules/hyprland.nix
-    ../../modules
   ];
 
   system.stateVersion = "26.05";

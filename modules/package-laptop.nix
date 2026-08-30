@@ -1,0 +1,22 @@
+{ pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [
+    nano
+    wget
+    kitty          # terminal
+    wofi           # app launcher
+    waybar         # status bar
+    dunst          # notifications
+    awww           # wallpaper daemon
+    grim           # screenshots
+    slurp          # screenshot region selector
+    wl-clipboard   # clipboard
+    networkmanagerapplet  # wifi tray icon
+    brightnessctl  # brightness keys
+    playerctl      # media keys
+
+    kdePackages.dolphin   # file manager
+    kdePackages.solid     # device/hardware integration for dolphin
+    udiskie               # auto-mounts removable media in the system tray
+  ];
+}
