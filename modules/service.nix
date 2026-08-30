@@ -2,12 +2,4 @@
 {
   # Printing
   services.printing.enable = true;
-
-  # Ollama
-  services.ollama = {
-    enable = true;
-    package = (import nixpkgs-unstable {
-      system = pkgs.system;
-    }).ollama-rocm;
-  };
 }
