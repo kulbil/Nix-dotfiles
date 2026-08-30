@@ -20,20 +20,38 @@
   };
 
   outputs = { nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, nix-flatpak, ... }: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit nixpkgs-unstable; };
-      modules = [
-        ./configuration.nix
-        nix-flatpak.nixosModules.nix-flatpak
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.martin = import ./home/home.nix;
-          home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-        }
-      ];
+    nixosConfigurations = {
+
+      desktop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit nixpkgs-unstable; };
+        modules = [
+          ./hosts/desktop
+          nix-flatpak.nixosModules.nix-flatpak
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.martin = import ./home/desktop.nix;
+            home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
+          }
+        ];
+      };
+
+      laptop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit nixpkgs-unstable; };
+        modules = [
+          ./hosts/laptop
+          nix-flatpak.nixosModules.nix-flatpak
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.martin = import ./home/laptop.nix;
+          }
+        ];
+      };
     };
   };
 }

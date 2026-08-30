@@ -32,7 +32,7 @@
     workspace = {
       colorScheme = "BreezeDark";
       lookAndFeel = "org.kde.breeze.desktop";
-      wallpaper = ../wallpapers/grass.png;
+      wallpaper = ../../../wallpapers/grass.png;
     };
 
     panels = [
@@ -59,7 +59,7 @@
             ];
           }
 
-          "org.kde.plasma.panelspa cer"
+          "org.kde.plasma.panelspacer"
           {
             systemTray.items = {
               shown = [

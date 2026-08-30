@@ -5,6 +5,5 @@
   imports =
     [
       ../modules/homeModules/git
-      ../modules/homeModules/plasma
     ];
 }

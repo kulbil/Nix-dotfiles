@@ -7,6 +7,7 @@
     ./bootloader.nix
     ./keyboard.nix
     ./locales.nix
+    ./nas.nix
     ./network.nix
     ./package.nix
     ./service.nix
