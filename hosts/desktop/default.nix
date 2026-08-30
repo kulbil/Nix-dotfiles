@@ -6,6 +6,8 @@
     ./disks.nix
 
     ../../modules
+    ../../modules/kde.nix
+    ../../modules/ollama.nix
   ];
 
   system.stateVersion = "26.05";

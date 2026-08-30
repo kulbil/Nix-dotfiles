@@ -1,9 +1,5 @@
 { pkgs, nixpkgs-unstable, ... }:
 {
-  # Printing
-  services.printing.enable = true;
-
-  # Ollama
   services.ollama = {
     enable = true;
     package = (import nixpkgs-unstable {
