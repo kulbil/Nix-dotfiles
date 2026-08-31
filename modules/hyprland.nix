@@ -1,19 +1,17 @@
 { pkgs, ... }:
 {
-  programs.hyprland = {
-    enable = true;
-    withUWSM = false;
-  };
+  services.xserver.enable = true;
+  programs.hyprland.enable = true;
 
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
+#  services.displayManager.sddm = {
+#    enable = true;
+#    wayland.enable = true;
+#  };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
-    ];
-  };
+#  xdg.portal = {
+#    enable = true;
+#    extraPortals = [
+#      pkgs.xdg-desktop-portal-hyprland
+#    ];
+#  };
 }

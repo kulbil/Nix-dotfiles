@@ -1,12 +1,13 @@
 { ... }:
 {
-    programs.git = {
-        enable = true;
-        settings = {
-            user = {
-                name = "kulbil";
-                email = "martin.danielsen@astralsaga.com";
-            };
-        };
+  wayland.windowManager.hyprland = {
+    enable = true;
+
+    settings = {
+      input = {
+        kb_layout = "no";
+        kb_variant = "";
+      };
     };
+  };
 }
