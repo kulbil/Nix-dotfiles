@@ -16,5 +16,6 @@
     kdePackages.kaddressbook
     kdePackages.kdepim-runtime
     kdePackages.akonadi
+    kdePackages.kdenlive
   ];
 }

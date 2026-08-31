@@ -16,7 +16,6 @@
     fastfetch
     osu-lazer
     prismlauncher
-    kdePackages.kdenlive
     aerc
   ];
 }

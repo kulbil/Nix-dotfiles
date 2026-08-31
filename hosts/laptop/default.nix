@@ -7,7 +7,7 @@
     ../../modules
     ../../modules/package-laptop.nix
     ../../modules/wireguard.nix
-    ../../modules/hyprland.nix
+    #../../modules/hyprland.nix
   ];
 
   system.stateVersion = "26.05";

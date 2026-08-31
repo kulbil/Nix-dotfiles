@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
+    hyprland
     nano
     wget
     kitty          # terminal
