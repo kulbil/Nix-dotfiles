@@ -54,6 +54,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.martin = import ./home/laptop.nix;
+            home-manager.sharedModules = [ caelestia-shell.homeManagerModules.default ];
           }
         ];
       };
