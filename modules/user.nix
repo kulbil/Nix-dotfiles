@@ -5,8 +5,5 @@
     isNormalUser = true;
     description = "Martin Danielsen";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      thunderbird
-    ];
   };
 }
