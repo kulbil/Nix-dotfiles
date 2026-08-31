@@ -24,7 +24,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, nix-flatpak, ... }: {
+  outputs = { nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, nix-flatpak, caelestia-shell, ... }: {
     nixosConfigurations = {
 
       desktop = nixpkgs.lib.nixosSystem {
