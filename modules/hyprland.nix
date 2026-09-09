@@ -1,10 +1,13 @@
 { pkgs, ... }:
 {
   services.xserver.enable = true;
+  services.power-profiles-daemon.enable = true;
   programs.hyprland.enable = true;
 
+
   environment.systemPackages = with pkgs; [
-    kitty                 #Terminal
+    swaybg                #Background
+    ghostty               #Terminal
     wofi                  #Application Launcher   
     wl-clipboard          #Clipboard
     hyprland              #Tiling manager
@@ -19,6 +22,4 @@
     kdePackages.dolphin   #File manager
     kdePackages.solid     #Device/hardware integration for dolphin
   ];
-
-  home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
 }

@@ -1,13 +1,6 @@
 { ... }:
-{
-  wayland.windowManager.hyprland = {
-    enable = true;
 
-    settings = {
-      input = {
-        kb_layout = "no";
-        kb_variant = "";
-      };
-    };
-  };
+{
+  home.file.".config/hypr/hyprland.lua".source = ./hyprland.lua;
+  home.file.".config/hypr/wallpaper.png".source = ../../../wallpapers/grass.png;
 }
