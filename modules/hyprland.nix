@@ -3,15 +3,22 @@
   services.xserver.enable = true;
   programs.hyprland.enable = true;
 
-#  services.displayManager.sddm = {
-#    enable = true;
-#    wayland.enable = true;
-#  };
+  environment.systemPackages = with pkgs; [
+    kitty                 #Terminal
+    wofi                  #Application Launcher   
+    wl-clipboard          #Clipboard
+    hyprland              #Tiling manager
+    waybar                #Top bar
+    dunst                 #Notification manager
+    grim                  #Screenshot tool
+    slurp                 #Screen region selector for grim
+    networkmanagerapplet  #Wifi tray icon
+    brightnessctl         #Brightness keys
+    playerctl             #Media keys
+    udiskie               #Automounting usb drives
+    kdePackages.dolphin   #File manager
+    kdePackages.solid     #Device/hardware integration for dolphin
+  ];
 
-#  xdg.portal = {
-#    enable = true;
-#    extraPortals = [
-#      pkgs.xdg-desktop-portal-hyprland
-#    ];
-#  };
+  home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
 }

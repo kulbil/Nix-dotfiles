@@ -5,6 +5,7 @@
     ./audio.nix
     ./bluetooth.nix
     ./bootloader.nix
+    ./java.nix
     ./keyboard.nix
     ./locales.nix
     ./nas.nix

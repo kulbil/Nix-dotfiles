@@ -5,7 +5,6 @@
     ./hardware-configuration.nix
 
     ../../modules
-    ../../modules/package-laptop.nix
     ../../modules/wireguard.nix
     ../../modules/hyprland.nix
   ];

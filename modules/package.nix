@@ -17,5 +17,6 @@
     osu-lazer
     prismlauncher
     aerc
+    heroic
   ];
 }
