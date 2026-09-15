@@ -8,6 +8,7 @@
     { appId = "com.discordapp.Discord"; origin = "flathub"; }  # Discord
     { appId = "org.vinegarhq.Sober"; origin = "flathub"; }  # Sober
     { appId = "com.dec05eba.gpu_screen_recorder"; origin = "flathub"; }  # GPU recorder
+    { appId = "app.eduroam.geteduroam"; origin = "flathub"; }
   ];
 
   xdg.portal.enable = true; # Needed for Flatpak app integration (file pickers, theming, etc.)

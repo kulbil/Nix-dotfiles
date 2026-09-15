@@ -18,6 +18,5 @@
     prismlauncher
     aerc
     heroic
-    geteduroam
   ];
 }
