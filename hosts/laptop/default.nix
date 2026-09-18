@@ -7,7 +7,6 @@
     ../../modules
     ../../modules/wireguard.nix
     ../../modules/hyprland.nix
-    ../../modules/certificates.nix
   ];
 
   system.stateVersion = "26.05";
