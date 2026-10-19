@@ -20,5 +20,7 @@
     heroic
     pandora-launcher
     keepassxc
+    kitty
+    chromium
   ];
 }
