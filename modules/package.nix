@@ -18,5 +18,7 @@
     prismlauncher
     aerc
     heroic
+    pandora-launcher
+    keepassxc
   ];
 }

@@ -8,6 +8,7 @@
 
     (python3.withPackages (python-pkgs: with python-pkgs; [
       ollama
+      minescript
     ]))
 
     kdePackages.kmail
