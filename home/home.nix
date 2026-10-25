@@ -5,5 +5,6 @@
   imports =
     [
       ../modules/homeModules/git
+      ../modules/homeModules/firefox
     ];
 }
