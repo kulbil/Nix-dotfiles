@@ -17,6 +17,7 @@
     gnomeExtensions.ddterm
     gjs
     gnome-tweaks
+    nautilus
   ];
 
   # Make the GTK, VTE, and libhandy GI typelibs discoverable
