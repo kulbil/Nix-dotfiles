@@ -29,7 +29,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, nix-flatpak, caelestia-shell, ... }: {
+  outputs = { nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, nix-flatpak, caelestia-shell, firefox-addons, ... }: {
     nixosConfigurations = {
 
       desktop = nixpkgs.lib.nixosSystem {
@@ -42,6 +42,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit firefox-addons; };   # <-- add
             home-manager.users.martin = import ./home/desktop.nix;
             home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
           }
@@ -58,6 +59,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit firefox-addons; };   # <-- add
             home-manager.users.martin = import ./home/laptop.nix;
             home-manager.sharedModules = [ caelestia-shell.homeManagerModules.default ];
           }
