@@ -107,7 +107,7 @@
           {
             iconTasks.launchers = [
               "preferred://filemanager"
-              "applications:firefox.desktop"s
+              "applications:firefox.desktop"
               "applications:com.discordapp.Discord.desktop"
               "applications:com.github.th_ch.youtube_music.desktop"
             ];
