@@ -27,7 +27,8 @@
       extensions = {
         packages = with firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
           ublock-origin
-          keepassxc-browser
+          #keepassxc-browser
+          proton-pass
         ];
       };
 
@@ -60,6 +61,8 @@
             "customizableui-special-spring1"
             "urlbar-container"
             "customizableui-special-spring2"
+            "78272b6fa58f4a1abaac99321d503a20_proton_me-browser-action"   # Proton Pass
+            "ublock0_raymondhill_net-browser-action"                       # uBlock Origin
             "downloads-button"
             "unified-extensions-button"
           ];
@@ -74,7 +77,7 @@
 
         # ── On-device AI: everything off except the sidebar chatbot ──
         "browser.ai.control.default" = "blocked";
-        "browser.ai.control.sidebarChatbot" = "available";     # exception: chatbot stays
+        "browser.ai.control.sidebarChatbot" = "blocked";     # exception: chatbot stays
         "browser.ai.control.translations" = "blocked";
         "browser.ai.control.pdfjsAltText" = "blocked";
         "browser.ai.control.smartTabGroups" = "blocked";
@@ -89,8 +92,8 @@
         "pdfjs.enableAltText" = false;
         "places.semanticHistory.featureGate" = false;
         "browser.urlbar.quicksuggest.mlEnabled" = false;
-        "browser.ml.chat.enabled" = true;                      # keep chatbot working
-        "browser.ml.chat.sidebar" = true;
+        "browser.ml.chat.enabled" = false;                      # keep chatbot working
+        "browser.ml.chat.sidebar" = false;
 
         # ── Data collection ──
         "datareporting.healthreport.uploadEnabled" = false;    # technical and interaction data

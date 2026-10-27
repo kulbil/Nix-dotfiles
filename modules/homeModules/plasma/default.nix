@@ -53,7 +53,7 @@
           {
             iconTasks.launchers = [
               "preferred://filemanager"
-              "applications:librewolf.desktop"
+              "applications:firefox.desktop"
               "applications:com.discordapp.Discord.desktop"
               "applications:com.github.th_ch.youtube_music.desktop"
             ];
@@ -107,7 +107,7 @@
           {
             iconTasks.launchers = [
               "preferred://filemanager"
-              "applications:librewolf.desktop"
+              "applications:firefox.desktop"s
               "applications:com.discordapp.Discord.desktop"
               "applications:com.github.th_ch.youtube_music.desktop"
             ];
@@ -159,7 +159,7 @@
           {
             iconTasks.launchers = [
               "preferred://filemanager"
-              "applications:librewolf.desktop"
+              "applications:firefox.desktop"
               "applications:com.discordapp.Discord.desktop"
               "applications:com.github.th_ch.youtube_music.desktop"
             ];
