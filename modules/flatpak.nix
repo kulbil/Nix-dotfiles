@@ -9,7 +9,7 @@
     { appId = "org.vinegarhq.Sober"; origin = "flathub"; }  # Sober
     { appId = "com.dec05eba.gpu_screen_recorder"; origin = "flathub"; }  # GPU recorder
     { appId = "com.modrinth.ModrinthApp"; origin = "flathub"; }  # Modrinth
+    { appId = "app.fluxer.Fluxer"; origin = "flathub"; }  # Fluxer
   ];
-
   xdg.portal.enable = true; # Needed for Flatpak app integration (file pickers, theming, etc.)
 }

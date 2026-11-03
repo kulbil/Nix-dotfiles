@@ -17,5 +17,6 @@
     kdePackages.kdepim-runtime
     kdePackages.akonadi
     kdePackages.kdenlive
+    kdePackages.filelight
   ];
 }
