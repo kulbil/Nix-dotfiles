@@ -5,6 +5,10 @@ let
 in
 {
   dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+
     "org/gnome/desktop/background" = {
       picture-uri = wallpaper;
       picture-uri-dark = wallpaper;

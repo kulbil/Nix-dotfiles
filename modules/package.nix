@@ -22,5 +22,7 @@
     keepassxc
     kitty
     chromium
+    otpclient
+    claude-code
   ];
 }

@@ -1,7 +1,5 @@
 { ... }:
 {
-  # HARICA root certificates for UiO eduroam
-  security.pki.certificateFiles = [
-    "${pkgs.harica-ca-certs}/etc/ssl/certs/harica-root-ca.pem"
-  ];
+  environment.etc."ssl/certs/harica-tls-ecc-root-2021.pem".source =
+    ../certs/HARICA-TLS-Root-2021-ECC.pem;
 }
