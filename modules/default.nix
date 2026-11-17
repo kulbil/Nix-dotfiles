@@ -3,6 +3,7 @@
   imports = [
     ./aliases.nix
     ./audio.nix
+    ./appimage.nix
     ./bluetooth.nix
     ./bootloader.nix
     ./java.nix

@@ -19,10 +19,10 @@
     aerc
     heroic
     pandora-launcher
-    keepassxc
     kitty
     chromium
     otpclient
     claude-code
+    kdePackages.kcalc
   ];
 }
